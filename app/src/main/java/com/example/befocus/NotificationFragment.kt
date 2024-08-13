@@ -3,13 +3,10 @@ package com.example.befocus
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
-class PopupFragment: DialogFragment(R.layout.popup_fragment) {
+class NotificationFragment: DialogFragment(R.layout.notification_fragment) {
     private var content: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

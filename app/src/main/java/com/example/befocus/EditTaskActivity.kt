@@ -6,10 +6,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
@@ -75,9 +73,9 @@ class EditTaskActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val taskName_msg: String = edtTaskName.text.toString()
             if (taskName_msg.isEmpty()){
-                var dialog_notification = PopupFragment()
+                var dialog_notification = NotificationFragment()
                 val args = Bundle().apply {
-                    putString("arg_message", "Task Name cannot empty")
+                    putString("arg_message", "Task Name cannot be empty")
                 }
                 dialog_notification.arguments = args
                 dialog_notification.show(supportFragmentManager,"Notification")

@@ -1,17 +1,13 @@
 package com.example.befocus
 
-import android.Manifest
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
-import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -21,10 +17,8 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -89,7 +83,7 @@ class TimerActivity: AppCompatActivity() {
         }
         else {
             txtTimeRemaining.text = taskNotification_msg.toString()
-            var dialog_notification = PopupFragment()
+            var dialog_notification = NotificationFragment()
             val args = Bundle().apply {
                 putString("arg_message", "Congrats! Focus time for $sendTaskName is done.")
             }
@@ -143,7 +137,7 @@ class TimerActivity: AppCompatActivity() {
                 btnPlayResume.setBackgroundResource(R.drawable.play_icon)
                 timeLeftMiliSeconds = totalMiliSeconds
                 showNotification("Congrats!", "Focus time for $sendTaskName is done.")
-                var dialog_notification = PopupFragment()
+                var dialog_notification = NotificationFragment()
                 val args = Bundle().apply {
                     putString("arg_message", "Congrats! Focus time for $sendTaskName is done.")
                 }
